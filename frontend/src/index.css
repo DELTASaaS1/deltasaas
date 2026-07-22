@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- RÉINITIALISATION GLOBALE --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-app: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --border-color: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  
+  /* Couleurs Métier DeltaSaaS */
+  --green-success: #00E5A0;
+  --blue-info: #4F9EFF;
+  --amber-warning: #FFB830;
+  --red-error: #FF5A5A;
+  --purple-accent: #A78BFA;
+}
+
+body {
+  background-color: var(--bg-app) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- ADAPTATION DES CARTES / PANNEAUX DANS VOS PAGES --- */
+.card, .panel, .kpi-card, div[class*="card"], div[class*="panel"] {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* --- ADAPTATION DES TABLEAUX --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-main) !important;
+}
+
+th {
+  background-color: #F1F5F9 !important;
+  color: var(--text-muted) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid var(--border-color) !important;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--text-main) !important;
+}
+
+tr:hover {
+  background-color: #F8FAFC !important;
+}
+
+/* --- INPUTS & FORMULAIRES --- */
+input, select, textarea {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0F172A !important;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+input:focus, select:focus {
+  outline: 2px solid #0F172A;
+  border-color: transparent !important;
+}
+
+/* --- BADGES ET PILLS DE STATUT --- */
+.badge, .status-pill, .pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.status-pill.livre, .status-pill.succes, .status-pill.paye {
+  background-color: #DCFCE7 !important;
+  color: #15803D !important;
+}
+
+.status-pill.en-cours, .status-pill.attente {
+  background-color: #FEF3C7 !important;
+  color: #B45309 !important;
+}
+
+.status-pill.annule, .status-pill.erreur {
+  background-color: #FEE2E2 !important;
+  color: #B91C1C !important;
+}

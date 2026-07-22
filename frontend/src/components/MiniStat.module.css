@@ -1,0 +1,8 @@
+.card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 10px 14px; text-align: center;
+  transition: transform .15s, border-color .15s; cursor: pointer;
+}
+.card:hover { transform: translateY(-2px); border-color: var(--border2); }
+.value { font-size: 18px; font-weight: 600; letter-spacing: -.3px; }
+.label { font-size: 11px; color: var(--text2); margin-top: 1px; }

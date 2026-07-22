@@ -1,0 +1,76 @@
+.sidebar {
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.logo {
+  padding: 20px 20px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.logoMark { display: flex; align-items: center; gap: 10px; }
+.logoIcon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--green), #00b4d8);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.logoName { font-size: 16px; font-weight: 600; letter-spacing: -.3px; }
+.logoSub  { font-size: 10px; color: var(--text3); letter-spacing: .1em; text-transform: uppercase; margin-top: 2px; }
+
+.tenantSelector {
+  margin: 12px 16px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.tenantDot  { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); }
+.tenantInfo { flex: 1; margin-left: 8px; }
+.tenantName { font-size: 12px; font-weight: 500; }
+.tenantPlan { font-size: 10px; color: var(--green); text-transform: uppercase; letter-spacing: .08em; }
+.tenantArrow { font-size: 10px; color: var(--text3); }
+
+.nav { padding: 8px 0; flex: 1; }
+.navSection { padding: 14px 20px 6px; font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: .1em; }
+.navItem {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 20px;
+  font-size: 13px; color: var(--text2);
+  cursor: pointer; transition: all .15s; position: relative;
+}
+.navItem:hover { color: var(--text); background: var(--border); }
+.active { color: var(--text) !important; background: var(--bg4); }
+.active::before {
+  content: ''; position: absolute; left: 0; top: 4px; bottom: 4px;
+  width: 3px; background: var(--green); border-radius: 0 3px 3px 0;
+}
+.navBadge {
+  margin-left: auto;
+  background: var(--red); color: #fff;
+  font-size: 10px; font-weight: 600;
+  padding: 1px 6px; border-radius: 20px;
+}
+.navBadge.green { background: var(--green-dim); color: var(--green); }
+
+.footer { padding: 16px; border-top: 1px solid var(--border); }
+.userRow {
+  display: flex; align-items: center; gap: 10px;
+  cursor: pointer; padding: 6px;
+  border-radius: var(--r); transition: background .15s;
+}
+.userRow:hover { background: var(--border); }
+.avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, #4f9eff, #a78bfa);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: #fff; flex-shrink: 0;
+}
+.userInfo { flex: 1; }
+.userName { font-size: 13px; font-weight: 500; }
+.userRole { font-size: 11px; color: var(--text3); }
+.settingsIcon { color: var(--text3); font-size: 11px; }

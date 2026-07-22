@@ -1,0 +1,23 @@
+.topbar {
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg2);
+  position: sticky; top: 0; z-index: 10;
+}
+.title { font-size: 18px; font-weight: 600; letter-spacing: -.3px; }
+.sub   { font-size: 12px; color: var(--text2); margin-top: 1px; }
+.actions { display: flex; align-items: center; gap: 10px; }
+.notifBtn {
+  width: 36px; height: 36px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 18px; position: relative;
+}
+.notifDot {
+  position: absolute; top: 6px; right: 6px;
+  width: 7px; height: 7px;
+  background: var(--red); border-radius: 50%;
+  border: 2px solid var(--bg2);
+}
