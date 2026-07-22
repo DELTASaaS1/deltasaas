@@ -7,7 +7,10 @@ const errorHandler = require('./middleware/errorHandler');
 const app = express();
 
 app.use(helmet());
-app.use(cors({ origin: 'http://localhost:5173' })); // URL Vite
+const corsOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(',').map(s => s.trim())
+  : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175'];
+app.use(cors({ origin: corsOrigins }));
 app.use(express.json());
 
 // Toutes les routes passent par /api/v1
