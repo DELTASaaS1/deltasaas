@@ -23,35 +23,6 @@ router.get('/health', (req, res) => {
   res.status(200).json({ status: 'UP' });
 });
 
-// ─── Ancienne route dashboard (conservée pour compatibilité) ───────────────
-router.get('/dashboard/stats', (req, res) => {
-  res.status(200).json({
-    kpis: {
-      ca_mensuel:     chiffreAffaires.toLocaleString('fr-FR'),
-      commandes_mois: totalCommandes,
-      taux_livraison: "94.2%",
-      alertes_stock:  3
-    },
-    commandes_recentes: commandesRecentes
-  });
-});
-
-router.post('/dashboard/commandes', (req, res) => {
-  const { client, montant } = req.body;
-  if (!client || !montant) {
-    return res.status(400).json({ error: "Le nom du client et le montant sont obligatoires." });
-  }
-  const nouvelId  = `#ORD-${Math.floor(1000 + Math.random() * 9000)}`;
-  const initiales = client.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
-  const nouvelleCommande = {
-    id: nouvelId, client, initiales: initiales || "CL",
-    statut: "préparation", montant: parseInt(montant).toLocaleString('fr-FR')
-  };
-  commandesRecentes.unshift(nouvelleCommande);
-  chiffreAffaires += parseInt(montant);
-  totalCommandes  += 1;
-  res.status(201).json({ message: "Commande ajoutée avec succès !", commande: nouvelleCommande });
-});
 
 // ─── Montage des nouveaux modules ──────────────────────────────────────────
 router.use('/dashboard',  dashboardRoutes);
